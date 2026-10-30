@@ -68,8 +68,8 @@ export const handler: APIGatewayProxyHandler = async (event) => {
         instanceId
       })
     }
-  } catch (err) {
-    console.error('EC2 lifecycle operation failed', err)
+  } catch {
+    console.error('EC2 lifecycle operation failed')
     return {
       statusCode: 500,
       body: JSON.stringify({error: 'Internal server error in manageEC2Instances'})
